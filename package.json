@@ -1,0 +1,54 @@
+{
+  "name": "hook-experiments",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.2",
+    "@emotion/styled": "^10.0.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-scripts": "2.1.1",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "coverage": "npm test -- --coverage",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "format": "prettier --write *.md src/**/*.{js,jsx}",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "eslint --fix",
+      "prettier",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^1.2.0",
+    "jest-dom": "^3.0.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "react-testing-library": "^5.3.1"
+  }
+}
